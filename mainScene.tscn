@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcclnsemtwaqt"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_up8oc"]
+[ext_resource type="Texture2D" uid="uid://c1bdfvgdvdcfu" path="res://icon.svg" id="3_cjj1w"]
+[ext_resource type="Texture2D" uid="uid://c6l4tuj50jlb0" path="res://sprites/crow.png" id="3_tbisv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_quvpd"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_4cndj"]
+font_size = 48
+font_color = Color(0.872379, 0.772719, 0.89062, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_up8oc")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(108, 251)
+texture = ExtResource("3_cjj1w")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 359.0
+offset_right = 913.0
+offset_bottom = 496.0
+text = "Godot+NFC Test"
+label_settings = SubResource("LabelSettings_quvpd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutputLabel" type="Label" parent="."]
+offset_left = 122.0
+offset_top = 660.0
+offset_right = 970.0
+offset_bottom = 958.0
+text = "Output"
+label_settings = SubResource("LabelSettings_4cndj")
+
+[node name="OutputSprite" type="Sprite2D" parent="."]
+position = Vector2(550, 1300)
+texture = ExtResource("3_tbisv")

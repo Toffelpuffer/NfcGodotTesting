@@ -96,7 +96,7 @@ public class GodotApp extends GodotActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        Log.v(LogTag, intent.getAction() != null ? intent.getAction() : "null");
+        Log.v(LogTag, intent != null ? intent.getAction() : "null");
         super.onNewIntent(intent);
 
         setIntent(intent);

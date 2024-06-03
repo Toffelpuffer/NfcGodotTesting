@@ -33,9 +33,7 @@ class DynamicNfcPlugin(godot: Godot) : GodotPlugin(godot), NfcAdapter.ReaderCall
 
         /*val nfcIntentFilter = IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED)
         val receiverFlags = Context.RECEIVER_EXPORTED;
-        Log.v(pluginName, "A " + (context != null))
-        context.registerReceiver(nfcListener, nfcIntentFilter, receiverFlags)
-        Log.v(pluginName, "B")*/
+        context.registerReceiver(nfcListener, nfcIntentFilter, receiverFlags)*/
 
         val isNfcSupported: Boolean = this.nfcAdapter != null
         if (!isNfcSupported) {
@@ -100,41 +98,7 @@ class DynamicNfcPlugin(godot: Godot) : GodotPlugin(godot), NfcAdapter.ReaderCall
         val ndef = Ndef.get(tag)
         Log.v(pluginName, "--- $ndef")
 
-        //ndfcATag.connect()
-
-        //ndfcATag.close()
-
-
-        /*val nfc = NfcA.get(tag)
-
-        val atqa: ByteArray = nfc.getAtqa()
-        val sak: Short = nfc.getSak()
-        nfc.connect()
-
-        val isConnected = nfc.isConnected()
-
-
-        if (isConnected) {
-            val receivedData: ByteArray = nfc.transceive(NFC_READ_COMMAND)
-
-            //code to handle the received data
-            // Received data would be in the form of a byte array that can be converted to string
-            //NFC_READ_COMMAND would be the custom command you would have to send to your NFC Tag in order to read it
-
-        } else {
-            Log.e("ans", "Not connected")
-        }*/
-
-        runOnUiThread {
-            val msg =
-                "Read: $ndef"
-            Toast.makeText(activity, msg, Toast.LENGTH_LONG).show()
-            Log.v(pluginName, msg)
-        }
-
-        emitSignal(tagReadSignalInfo.name, readTag(tag))
-
-        //nfc.close()
+        //emitSignal(tagReadSignalInfo.name, readTag(tag))
     }
 
     fun emitNfcTagRead(nfcText: String) {
